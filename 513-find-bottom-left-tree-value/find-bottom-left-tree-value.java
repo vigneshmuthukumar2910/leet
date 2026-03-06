@@ -17,21 +17,17 @@ class Solution {
     private int temp=0,min=-1;
     public int findBottomLeftValue(TreeNode root) {
       dfs(root,0);
-      return temp;
-      
-        
+      return temp;     
     }
     private void dfs(TreeNode root,int level){
         if(root==null){
             return;
-        }
-    
+        } 
             if( min<level)
             {
             min=level;
             temp=root.val;
-        }
-        
+        }     
         dfs(root.left,level+1);
         dfs(root.right,level+1);
 
