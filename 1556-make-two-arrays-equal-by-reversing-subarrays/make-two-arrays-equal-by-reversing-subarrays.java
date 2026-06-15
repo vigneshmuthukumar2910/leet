@@ -1,12 +1,17 @@
 class Solution {
     public boolean canBeEqual(int[] target, int[] arr) {
-        int n=target.length,m=arr.length;
-        if(n!=m){
+        int[] t=new int[1001];
+        for(int i:target){
+          t[i]++;
+    }
+    for(int i:arr){
+        t[i]--;
+    }
+    for(int i:t){
+        if(i!=0){
             return false;
         }
-        Arrays.sort(target);
-        Arrays.sort(arr);
-        return Arrays.equals(target,arr);
-        
+    }
+    return true;
     }
 }
